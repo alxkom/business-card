@@ -7,7 +7,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "8888";
+const PORT = process.env.PORT || "3000";
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
   },
   module: {
@@ -41,7 +41,7 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: "./public",
+    contentBase: "./build",
     // do not print bundle build stats
     noInfo: true,
     // enable HMR
@@ -54,6 +54,19 @@ module.exports = {
     host: HOST
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('staging'),
+        REACT_APP_ENV: JSON.stringify('stage'),
+        REACT_APP_CLIENT_ID: JSON.stringify('5afa0171cee6867e3f759fbd211191e8d6484ee982161da827772cd0dd831571'),
+        REACT_APP_URL: JSON.stringify('vitrina.cobrain.io'),
+        REACT_APP_OAUTH_REDIRECT_URL: JSON.stringify('staging.cobrain.io'),
+        REACT_APP_API_DOMAIN: JSON.stringify('https://api.batton.cobrain.io'),
+        REACT_APP_FS: JSON.stringify('https://batton.cobrain.io'),
+        REACT_APP_FS_CRED: JSON.stringify('username: a.gropyanov@skoltech.ru, password: f;KAF^<3'),
+        REACT_APP_PROXY: JSON.stringify('')
+      }
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),

@@ -1,0 +1,262 @@
+// All variables defined here will be automatically
+// available to all sass files thanks to
+// 'sass-resources-loader'
+
+$font-bold: 'Montserrat-Bold', sans-serif;
+$font-extra-bold: 'Montserrat-ExtraBold', sans-serif;
+$font-regular: 'Montserrat-Regular', sans-serif;
+$font-semiBold: 'Montserrat-SemiBold', sans-serif;
+$font-Bold: 'Montserrat-Bold', sans-serif;
+$font-mediumItalic: 'Montserrat-MediumItalic', sans-serif;
+$font-medium: 'Montserrat-Medium', sans-serif;
+$font-light: 'Montserrat-Light', sans-serif, sans-serif;
+
+$buttonColorNormal: #00AEF2;
+$buttonColorDisabled: #7FD7F9;
+$buttonColorHovered: #4CC7F6;
+$buttonColorActive: linear-gradient(180deg, #43C8F9 0%, #2097F0 100%);
+
+$shadow-blue-color: rgba(19,137,225, 0.24);
+
+$dropZoneBackground: #F2FBFF;
+$additionalHeadersColor: #00AEF2;
+$hoverMainColor: #00AEf2;
+$colorWhite: #ffffff;
+$footerColor: #ECECEC;
+$backgroundColor: #F7FAFC;
+$additionalColor: #CBEFFD;
+$dropZoneSubmitButtonColor: #879DA8;
+$borderColor: #E0E0E0;
+$dividerColor: #EEEEEE;
+$aciveElement: #e5f7fe;
+
+$cardIconEnabled: #CDCDCD;
+
+$textBlue: #00AEEF;
+$textRed: #FE625E;
+$textGolden: #FF8A00;
+$textGray: #616161;
+$textDarkGray: #212121;
+
+@mixin textType-AppResultSmallHeaderTitle {
+  color: $textDarkGray;
+  font-size: 16px;
+  font-family: $font-regular;
+}
+
+@mixin textType-AppResultSmallDataItem {
+  color: $textDarkGray;
+  font-size: 16px;
+  font-family: $font-light;
+}
+
+@mixin textType-AdditionalResultDataStanding {
+  color: $textGray;
+  font-size: 13px;
+  font-family: $font-regular;
+}
+
+@mixin textType-App__Diagnosis__Probably {
+  color: $textRed;
+  font-size: 16px;
+  letter-spacing: 0.92px;
+  text-transform: uppercase;
+  font-family: $font-light;
+}
+
+@mixin textType-App__Diagnosis__Unsure {
+  color: $textGolden;
+  font-size: 16px;
+  letter-spacing: 0.92px;
+  text-transform: uppercase;
+  font-family: $font-light;
+}
+
+@mixin textType-additional {
+  font-size: 13px;
+  font-family: $font-medium;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 16px;
+  color: $textGray;
+}
+
+@mixin textType-uncoloredZoneListItem {
+  color: $textGray;
+  font-family: $font-light;
+  font-size: 14px;
+}
+@mixin textType-ItemSMapResultItem {
+  color: $textGray;
+  font-size: 18px;
+  font-family: $font-light;
+}
+
+@mixin textType-AnalysisResultItem {
+  color: $textGray;
+  font-size: 16px;
+  font-family: $font-light;
+}
+
+@mixin button-text {
+  font-size: 16px;
+  font-family: $font-bold;
+  letter-spacing: -0.3px;
+  line-height: 16px;
+  color: $colorWhite;
+}
+
+@mixin textType-app-info {
+  font-family: $font-regular;
+  letter-spacing: -0.4px;
+  color: $textGray;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+@mixin textType-additional2 {
+  font-size: 28px;
+  font-family: $font-regular;
+  color: $textGray;
+  letter-spacing: -0.3px;
+  line-height: 36px;
+}
+
+@mixin textType-additionalAccented {
+  font-size: 13px;
+  font-family: $font-medium;
+  color: $textBlue;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 16px;
+}
+
+@mixin textType-metaInfoLabels {
+  font-size: 12px;
+  font-family: $font-regular;
+  color: $textGray;
+  letter-spacing: -0.3px;
+  line-height: 15px;
+}
+
+@mixin textType-metaInfoData {
+  font-size: 12px;
+  font-family: $font-regular;
+  color: $textGray;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+@mixin textType-urlNormal {
+  font-size: 13px;
+  font-family: $font-mediumItalic;
+  color: #0084B6;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 16px;
+}
+
+@mixin textType-urlHovered {
+  font-size: 13px;
+  font-family: $font-mediumItalic;
+  color: #03B7F1;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 16px;
+}
+
+@mixin textType-result-recognition {
+  font-size: 20px;
+  font-family: $font-medium;
+  font-weight: 400;
+  color: $textGray;
+  line-height: 35px;
+  letter-spacing: 0.83px;
+}
+
+@mixin textType-descriptionError {
+  font-size: 11px;
+  font-family: $font-mediumItalic;
+  color: #CC4643;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 16px;
+}
+
+@mixin textType-descriptionNeutral {
+  font-size: 11px;
+  font-family: $font-mediumItalic;
+  color: $textGray;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 16px;
+}
+
+@mixin textType-descriptionPositive {
+  font-size: 11px;
+  font-family: $font-mediumItalic;
+  color: #65AB1B;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 16px;
+}
+
+@mixin textType-descriptionActive {
+  font-size: 11px;
+  font-family: $font-mediumItalic;
+  color: #0084B8;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    line-height: 16px;
+}
+
+@mixin textType-ChBx-RB-CheckedEnabled {
+  font-size: 13px;
+  color: #4A616B;
+}
+
+@mixin textType-ChBx-RB-CheckedDisabled {
+  font-size: 13px;
+  color: #546C76;
+    opacity: 0.5;
+}
+
+@mixin textType-ChBx-RB-UncheckedEnabled {
+  font-size: 13px;
+  color: $textGray;
+}
+
+@mixin textType-ChBx-RB-UncheckedDisabled {
+  font-size: 13px;
+    color: $textGray;
+    opacity: 0.5;
+}
+
+@mixin textType-badgeDark {
+  font-size: 14px;
+  color: #263238;
+}
+
+@mixin textType-badgeLight {
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+@mixin textType-input-group {
+  font-family: $font-medium;
+  font-size: 12px;
+  color: #9B9B9B;
+    height: 19px;
+    width: 130.23px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+@mixin spinner-text {
+  font-family: $font-medium;
+  font-size: 20px;
+  color: $textGray;
+    letter-spacing: 0.92px;
+    line-height: 35px;
+}
+

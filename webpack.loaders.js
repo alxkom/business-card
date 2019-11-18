@@ -9,8 +9,8 @@ const sassIncludePaths = [
 
 // These files will be imported in every sass file
 const sassResourcesPaths = [
-  path.resolve(__dirname, 'styles/abstracts/_variables.sass'),
-  path.resolve(__dirname, 'styles/abstracts/_mixins.sass'),
+  path.resolve(__dirname, 'styles/abstracts/_variables.scss'),
+  path.resolve(__dirname, 'styles/abstracts/_mixins.scss')
 ];
 
 // noinspection WebpackConfigHighlighting
@@ -21,7 +21,7 @@ module.exports = [
   // Load jsx extensions with babel so we can use
   // 'import' instead of 'require' and es6 syntax
   {
-    test: /\.jsx?$/,
+    test: /\.(js|jsx)$/,
     include: path.resolve(__dirname, 'src'),
     loader: "babel-loader",
     options: {
@@ -36,28 +36,12 @@ module.exports = [
   // = Fonts =
   // =========
   {
-    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-    exclude: path.resolve(__dirname, "node_modules"),
-    use: ["file-loader"]
-  },
-  {
-    test: /\.(woff|woff2)$/,
-    exclude: path.resolve(__dirname, "node_modules"),
-    use: [
-      {
-        loader: "url-loader",
-        options: {prefix: "font", limit: 5000}
-      }
-    ]
-  },
-  {
-    test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+    test: /\.(woff|woff2|ttf|eot)$/,
     exclude: path.resolve(__dirname, "node_modules"),
     use: [
       {
         loader: "url-loader",
         options: {
-          prefix: "font",
           limit: 10000,
           mimetype: "application/octet-stream"
         }
@@ -94,14 +78,14 @@ module.exports = [
     ]
   },
   {
-    test: /\.jpg/,
+    test: /\.(jpg|jpeg)/,
     exclude: path.resolve(__dirname, "node_modules"),
     use: [
       {
         loader: "url-loader",
         options: {
           limit: 10000,
-          mimetype: "image/jpg"
+          mimetype: "image/jpeg"
         }
       }
     ]
@@ -157,23 +141,19 @@ module.exports = [
         }
       },
       {
-        loader: "postcss-loader",
-        options: {
-          sourceMap: "inline",
-        }
-      },
-      {
         loader: "sass-loader",
         options: {
+		      data: '@import "./styles/abstracts/_variables";',
           sourceMap: true,
           outputStyle: "expanded",
-          indentedSyntax: "sass",
+          indentedSyntax: false,
           includePaths: sassIncludePaths
         }
       },
       {
         loader: "sass-resources-loader",
         options: {
+		      sourceMap: true,
           resources: sassResourcesPaths
         }
       }
@@ -193,33 +173,26 @@ module.exports = [
         options: {
           sourceMap: true,
           camelCase: "dashes",
-          importLoaders: 1,
-          modules: true,
-          localIdentName: "[name]__[local]___[hash:base64:5]"
-        }
-      },
-      {
-        loader: "postcss-loader",
-        options: {
-          sourceMap: "inline",
+          importLoaders: 1
         }
       },
       {
         loader: "sass-loader",
         options: {
+		      data: '@import "./styles/abstracts/_variables";',
           sourceMap: true,
           outputStyle: "expanded",
-          indentedSyntax: "sass",
+          indentedSyntax: false,
           includePaths: sassIncludePaths
         }
       },
       {
         loader: "sass-resources-loader",
         options: {
+		      sourceMap: true,
           resources: sassResourcesPaths
         },
       }
     ]
   }
-
 ];
